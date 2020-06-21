@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   sprites_utils.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/06/20 13:40:48 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/20 14:23:29 by haachtch      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../inc/cube3d.h"
+
+void	swap(t_vec2 *a, t_vec2 *b)
+{
+	t_vec2	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	buble_sort(t_vec2 *tab, int size)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (tab[j].dist < tab[j + 1].dist)
+				swap(&tab[j], &tab[j + 1]);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	order_sprites(t_window *w)
+{
+	int i;
+
+	i = 0;
+	while (i < w->conf.nb_sprite)
+	{
+		w->conf.sprites_pos[i].dist =
+			fabs(w->game.p.pos.x - w->conf.sprites_pos[i].x) +
+				fabs(w->game.p.pos.y - w->conf.sprites_pos[i].y);
+		i++;
+	}
+	buble_sort(w->conf.sprites_pos, w->conf.nb_sprite);
+}
