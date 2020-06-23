@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/02 10:30:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 21:27:27 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 21:30:22 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void		set_texture(t_config *conf, char *str)
 {
 	int		i;
 
-	i = 0;
+	i = 2;
 	if (!is_texture_ok(str, conf))
 		print_error("Texture Error !");
-	while (str[i] && str[i] != '.')
+	while(str[i] && ft_iswhitespace(str[i]))
 		i++;
 	if (get_line_id(str) == 'N')
 		conf->textures[0] = ft_substr(str, i, ft_strlen(str) - i);
@@ -74,6 +74,7 @@ void		set_map(t_config *conf, char *str)
 	j++;
 }
 
+
 t_config	parse_map(char *argv)
 {
 	t_config	conf;
@@ -82,13 +83,17 @@ t_config	parse_map(char *argv)
 	conf = new_config();
 	file = cpy_cube_file(argv, &conf);
 	get_config(file, &conf);
-	flood_fill(conf.map, conf.posY, conf.posX, conf.nb_line - 8);
-	printf("MAP : \n");
-	print(conf.map, conf.nb_line - 8);
+	if(conf.nb_line < 9)
+		print_error("Error\nNo map\n");
 	get_sprites(&conf);
-	magic_free(file, conf.nb_line);
-	printf("%d\n", conf.max_line);
+	flood_fill(conf.map, conf.posY, conf.posX, conf.nb_line - 8);
 	if (!is_map_valid(&conf))
 		print_error("invalid map !!!! \n");
+	printf("MAP : \n");
+	print(file,conf.nb_line);
+	printf("-------------------\n\n");
+	print(conf.map, conf.nb_line - 8);
+	magic_free(file, conf.nb_line);
+	printf("%d\n", conf.max_line);
 	return (conf);
 }

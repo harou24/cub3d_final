@@ -6,7 +6,7 @@
 /*   By: haachtch <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:04:23 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 21:04:09 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 18:15:02 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int		ft_atoi_at_index(const char *str, int i)
 {
 	unsigned long int	nb;
 	int					neg;
+	int					count;
 
 	neg = 1;
 	nb = 0;
+	count = 0;
 	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\t'
 			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
 		i++;
@@ -26,10 +28,11 @@ int		ft_atoi_at_index(const char *str, int i)
 		neg = -1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9' && count < 8)
 	{
 		nb = nb * 10;
 		nb = (nb + str[i]) - 48;
+		count++;
 		i++;
 	}
 	if (nb >= 9223372036854775807 && neg == -1)

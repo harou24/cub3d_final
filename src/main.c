@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/09 17:58:01 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 20:34:09 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 22:19:45 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,21 @@ void	ft_take_screenshot(t_window *w)
 int		main(int argc, char **argv)
 {
 	t_window	w;
-/*
+
 	if(argc < 2 || argc > 3)
 		print_error("Error : !!!   NB Argument is not OK   !!! \n");
 	if(is_cube_file(argv[1]) != 0)
 		print_error("Error :  !!!   Not \".cub\"   !!!\n");
-*/
+
 	w.conf = parse_map(argv[1]);
 		w.k = init_key();
 	init_player_pos(&w);
 	w.mlx = mlx_init();
+	if ((w.conf.width > 2560 || w.conf.height > 1440) && argc != 3)
+		mlx_get_screen_size(w.mlx, &w.conf.width, &w.conf.height);
 	w.win = mlx_new_window(w.mlx, w.conf.width, w.conf.height, "CUBE3D");
 	w.array = make_more_images(&w);
-	w.textures = get_textures(&w);
+	w.textures = get_textures(&w);	
 	game(&w);
 	if(argc == 3)
 	{

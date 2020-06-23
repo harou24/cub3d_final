@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 16:13:16 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 18:53:38 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 18:48:54 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ void	game(t_window *w)
 		w->game.wall_hit -= floor(w->game.wall_hit);
 		init_each_of_textures_values(w, get_start(w));
 		draw(w, get_start(w), get_end(w), x);
+		exit(0);
 		z_buffer[x] = w->game.perpWallDist;
 		x++;
 	}

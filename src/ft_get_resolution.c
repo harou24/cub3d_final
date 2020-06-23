@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:17:36 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 19:00:19 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 18:22:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void	set_resolution(t_config *conf, char *str)
 	if (!is_resolution_line_ok(str))
 		print_error("Error\nResolution Error !\n");
 	height = get_height(str);
-	if (height < 1)
-		print_error("Error\nResolution Error : Invalid Resolution value\n");
 	width = get_width(str);
-	if (width < 1)
-		print_error("Error\nResolution Error : Invalid Resolution value\n");
 	conf->width = width;
 	conf->height = height;
+	if (height < 1)
+		print_error("Error\nResolution Error : Invalid Resolution value\n");
+	if (width < 1)
+		print_error("Error\nResolution Error : Invalid Resolution value\n");
 }
 
 int		is_resolution_line_ok(char *line)

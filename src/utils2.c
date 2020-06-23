@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 12:24:40 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 19:22:26 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 19:36:35 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ unsigned int	get_color_if_side(t_window *w)
 	{
 		w->textures[0].y = (int)w->textures[0].pos;
 		w->textures[0].pos += w->textures[0].step;
+	//	printf("%d, %d,\n",w->textures[0].x, w->textures[0].y);
 		color = my_mlx_pixel_read(&w->textures[0].tex.data,
 				w->textures[0].x, w->textures[0].y);
 	}

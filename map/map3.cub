@@ -1,9 +1,9 @@
-R 1920 1080
-NO ./textures/t0.png
-SO ./textures/t1.png
-WE ./textures/t2.png
-EA ./textures/t4.png
-S   ./textures/pok2.png
+R 3500 2800
+NO ./textures2/t0.png
+SO ./textures2/t1.png
+WE ./textures2/t2.png
+EA ./textures2/t4.png
+S   ./textures2/pok2.png
 F 255,210,   20
 C 255,210    ,20
 

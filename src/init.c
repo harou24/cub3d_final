@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:20:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 11:26:01 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 19:09:29 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	init_player(t_window *w)
 void	init_player_pos(t_window *w)
 {
 	init_player(w);
+	if (w->conf.direction == 'Z')
+		print_error("Error\nNo direction set !\n");
 	w->game.p.pos = new_vec2(w->conf.posX + 0.5, w->conf.posY + 0.5);
 	if (w->conf.direction == 'E')
 	{

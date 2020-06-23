@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 10:45:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 10:57:53 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 21:15:49 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	set_line(char **file, t_config *conf, char *line)
 {
-	if (conf->nb_line < 9)
+	if (conf->nb_line < 8)
 	{
 		file[conf->nb_line] = ft_strtrim(line, " ");
 	}
