@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 12:29:21 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/19 15:38:52 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/22 18:39:59 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ void	magic_free(char **file, int nb_line)
 		free(file[i]);
 		i++;
 	}
+	free(file);
 }

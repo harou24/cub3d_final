@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 13:26:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 19:29:32 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/22 22:00:23 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,10 @@ typedef struct  s_data {
     int         endian;
 }               t_data;
 
-struct	s_color{
-	int		red;
-	int		green;
-	int 	blue;
-
-}				t_color;
-
 typedef struct      s_vec2 {
     double          x;
     double          y;
-	double				dist;
+	double			dist;
 }                   t_vec2;
 
 typedef struct	s_counter {
@@ -85,6 +78,7 @@ typedef struct 	s_sprite {
 }				t_sprite;
 
 typedef struct      s_config {
+	int				is_set[8];
 	int				max_line;
 	int				nb_line;
     int				height;
@@ -173,10 +167,8 @@ t_texture   *get_textures(t_window *w);
 void init_each_of_textures_values(t_window *w, int drawStart);
 void game(t_window *w);
 void jump_to_next_map(t_window *w);
-void    calculate_step_and_side_distance(t_window *w);
 int     get_start(t_window *w);
 int     get_end(t_window *w);
-void    calculate_step_and_side_distance(t_window *w);
 void jumpt_to_next_map(t_window *w);
 t_config        new_config(void);
 void            get_config(char **file, t_config *conf);
@@ -196,7 +188,7 @@ void    set_color(t_config *conf, char *str);
 int             is_color_ok(char *line);
 int             is_empty_line(char *line);
 int             is_path_ok(char *str);
-int             is_texture_ok(char *line);
+int             is_texture_ok(char *line, t_config *conf);
 int             is_line_valid(char *line);
 int             is_map_line_ok(char *line);
 int             is_position_in_line(char *line);

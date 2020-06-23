@@ -6,14 +6,14 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 19:33:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 14:50:09 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/21 20:59:51 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 #include "../inc/bmp.h"
 
-t_header	new_header(t_window *w, t_bmp bmp)
+static t_header		new_header(t_window *w, t_bmp bmp)
 {
 	t_header h;
 
@@ -30,12 +30,12 @@ t_header	new_header(t_window *w, t_bmp bmp)
 	return (h);
 }
 
-ssize_t		write_header(int fd, t_header h)
+static	ssize_t		write_header(int fd, t_header h)
 {
 	return (write(fd, &h, sizeof(t_header)));
 }
 
-void		init_bmp(t_bmp *bmp, t_window *w)
+static void			init_bmp(t_bmp *bmp, t_window *w)
 {
 	bmp->padding = w->conf.width % 4;
 	bmp->line_size = 3 * w->conf.width + bmp->padding;
@@ -45,7 +45,7 @@ void		init_bmp(t_bmp *bmp, t_window *w)
 		print_error("Error");
 }
 
-t_bmp		new_bmp(t_window *w)
+static t_bmp		new_bmp(t_window *w)
 {
 	t_bmp			bmp;
 	unsigned int	color;

@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 13:31:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 21:15:40 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/21 21:16:06 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-void	calculate_step_and_side_distance(t_window *w)
+static void		calculate_step_and_side_distance(t_window *w)
 {
 	if (w->game.rayDir.x < 0)
 	{
@@ -40,7 +40,7 @@ void	calculate_step_and_side_distance(t_window *w)
 	}
 }
 
-void	set_perp_wall_dist(t_window *w)
+static void		set_perp_wall_dist(t_window *w)
 {
 	if (w->game.side == 0)
 		w->game.perpWallDist = (w->game.mapX - w->game.p.pos.x +

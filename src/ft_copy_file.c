@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 10:45:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/19 15:29:57 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/23 10:57:53 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 void	set_line(char **file, t_config *conf, char *line)
 {
-	char	*tmp;
-
-	if (conf->nb_line < 8)
+	if (conf->nb_line < 9)
 	{
-		tmp = ft_strtrim(line, " ");
-		file[conf->nb_line] = ft_strdup(tmp);
-		free(tmp);
+		file[conf->nb_line] = ft_strtrim(line, " ");
 	}
 	else
 	{
@@ -30,13 +26,34 @@ void	set_line(char **file, t_config *conf, char *line)
 	}
 }
 
+int check(char *line)
+{
+	int i = 0;
+	int count = 0;
+	while(line[i])
+	{
+		if(line[i] == '1')
+			count++;
+		if(line[i] == '2')
+			count++;
+		if(line[i] == '0')
+			count++;
+		if(line[i] != '0' && line[i] != '1' && line[i] != '2' 
+				&& line[i] != 'N' && line[i] != 'S' && line[i] != 'E'
+				&& line[i] != 'W')
+			count -= 10;
+		i++;
+	}
+	return (count);
+}
 char	**cpy_cube_file(char *argv, t_config *conf)
 {
 	char	**res;
 	char	*line;
 	int		ret;
 	int		fd;
-
+	int max = 0;
+	int space = 0;
 	res = malloc(sizeof(char **));
 	line = NULL;
 	ret = 1;
@@ -48,11 +65,18 @@ char	**cpy_cube_file(char *argv, t_config *conf)
 		ret = get_next_line(fd, &line);
 		if (!is_empty_line(line))
 		{
-			res = realloc(res, sizeof(char **) * (conf->nb_line + 1));
+			res = ft_realloc(res, sizeof(char **) * (conf->nb_line + 1));
 			set_line(res, conf, line);
 			conf->nb_line++;
+			max = check(line);
+			if(space == 1 && max > 1 && conf->nb_line > 9)
+				print_error("Map_failure\n");
+			space = 0;
 		}
+		else if(is_empty_line(line))
+			space = 1;
 		free(line);
 	}
+	close(fd);
 	return (res);
 }

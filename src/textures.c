@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:05:34 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 19:24:01 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/22 11:51:02 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_texture	*get_textures(t_window *w)
 		load_texture(w, &textures[count]);
 		count++;
 	}
+	magic_free(w->conf.textures, 5);
 	return (textures);
 }
 

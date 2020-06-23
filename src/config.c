@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 13:45:59 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/19 14:47:02 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/22 20:46:17 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@ t_config	new_config(void)
 {
 	t_config	conf;
 
-	conf.height = 0;
-	conf.width = 0;
+	conf.height = -1;
+	conf.width = -1;
 	conf.max_line = 0;
 	conf.nb_line = 0;
 	conf.nb_sprite = 0;
 	conf.sprites_pos = malloc(sizeof(t_vec2) * 200);
-	conf.map = malloc(sizeof(char **) * 1);
 	conf.posX = 0;
 	conf.posY = 0;
 	conf.direction = 'Z';
 	conf.textures = malloc(sizeof(char **) * 5);
-	if (conf.textures == NULL || conf.sprites_pos == NULL || conf.map == NULL)
+	if (conf.textures == NULL || conf.sprites_pos == NULL)
 		print_error("Malloc = NULL");
 	conf.textures[0] = NULL;
 	conf.textures[1] = NULL;
 	conf.textures[2] = NULL;
 	conf.textures[3] = NULL;
 	conf.textures[4] = NULL;
+	conf.rgb_ceiling[0] = -1;
+	conf.rgb_floor[0] = -1;
 	return (conf);
 }
 
@@ -41,11 +42,12 @@ void		get_config(char **file, t_config *conf)
 {
 	int		i;
 	int		j;
+	int		map_start;
 
 	i = 0;
 	j = 0;
+	map_start = 0;
 	conf->map = malloc(sizeof(char **) * (conf->nb_line - 8));
-	conf->textures = malloc(sizeof(char **) * 5);
 	while (i < conf->nb_line)
 	{
 		if (get_line_id(file[i]) == 'R')

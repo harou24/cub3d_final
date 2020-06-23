@@ -6,7 +6,7 @@
 #    By: haachtch </var/mail/haachtch>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/05 15:07:23 by haachtch       #+#    #+#                 #
-#    Updated: 2020/06/21 19:32:06 by haachtch      ########   odam.nl          #
+#    Updated: 2020/06/22 15:03:03 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,9 @@ OBJ := $(SRC:$(SRC_D)/%.c=$(OBJ_D)/%.o)
 
 LIBFT = ./libft/libft.a
 CC = clang
-#CC_FLAGS = -Wall -Werror -Wextra -Ofast -march=native
-CC_FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+
+CC_FLAGS = -g -Wall -Werror -Wextra -Ofast -march=native
+#CC_FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 all: $(NAME)
 
@@ -84,10 +85,12 @@ clean:
 	rm -rf $(OBJ_D)
 	$(MAKE) -C $(MINILIBX_D) clean
 	@$(MAKE) -C ./libft clean
+	rm	-rf *.dSYM
+	rm -f screenshot.bmp
 
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(MINILIBX)
 	@$(MAKE) -C ./libft fclean
-	rm screenshot.bmp
+
 re: fclean all
