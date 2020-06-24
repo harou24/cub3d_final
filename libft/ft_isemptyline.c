@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_realloc.c                                       :+:    :+:            */
+/*   ft_isemptyline.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/04 12:28:52 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/19 15:32:25 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/24 11:56:22 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/24 11:58:07 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "libft.h"
 
-void	*ft_realloc(void *s, size_t n)
+int		ft_isemptyline(char *line)
 {
-	void	*copy;
+	int		i;
 
-	copy = malloc(n);
-	if (s != NULL)
+	i = 0;
+	while (line[i])
 	{
-		copy = ft_memcpy(copy, s, n);
-		free(s);
+		if (!ft_iswhitespace(line[i]))
+			return (0);
+		i++;
 	}
-	return (copy);
+	return (1);
 }

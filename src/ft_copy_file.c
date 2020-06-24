@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 10:45:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 21:15:49 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:29:57 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-void	set_line(char **file, t_config *conf, char *line)
+static void			set_line(char **file, t_config *conf, char *line)
 {
 	if (conf->nb_line < 8)
 	{
@@ -26,57 +26,75 @@ void	set_line(char **file, t_config *conf, char *line)
 	}
 }
 
-int check(char *line)
+static int			check(char *line)
 {
-	int i = 0;
-	int count = 0;
-	while(line[i])
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (line[i])
 	{
-		if(line[i] == '1')
+		if (line[i] == '1')
+			count += 2;
+		if (line[i] == '2')
 			count++;
-		if(line[i] == '2')
+		if (line[i] == '0')
 			count++;
-		if(line[i] == '0')
-			count++;
-		if(line[i] != '0' && line[i] != '1' && line[i] != '2' 
+		if (line[i] != '0' && line[i] != '1' && line[i] != '2'
 				&& line[i] != 'N' && line[i] != 'S' && line[i] != 'E'
-				&& line[i] != 'W')
+				&& line[i] != 'W' && line[i] != ' ')
 			count -= 10;
 		i++;
 	}
 	return (count);
 }
-char	**cpy_cube_file(char *argv, t_config *conf)
+
+static int			get_fd(char *argv, char **res)
+{
+	int		fd;
+
+	fd = open(argv, O_RDONLY);
+	if (fd < 0 || res == NULL)
+		print_error("Error\nCopy Fatal Error\n");
+	return (fd);
+}
+
+static int			get_max(char *line, int space, t_config *conf)
+{
+	int		max;
+
+	max = check(line);
+	if (space == 1 && max > 1 && conf->nb_line > 9)
+		print_error("Map_failure\n");
+	return (max);
+}
+
+char				**cpy_cube_file(char *argv, t_config *conf, int space)
 {
 	char	**res;
 	char	*line;
-	int		ret;
-	int		fd;
-	int max = 0;
-	int space = 0;
+	int		tab[2];
+
 	res = malloc(sizeof(char **));
 	line = NULL;
-	ret = 1;
-	fd = open(argv, O_RDONLY);
-	if (fd < 0 || res == NULL)
-		return (NULL);
-	while (ret > 0)
+	tab[0] = 1;
+	tab[1] = get_fd(argv, res);
+	while (tab[0] > 0)
 	{
-		ret = get_next_line(fd, &line);
-		if (!is_empty_line(line))
+		tab[0] = get_next_line(tab[1], &line);
+		if (!ft_isemptyline(line))
 		{
 			res = ft_realloc(res, sizeof(char **) * (conf->nb_line + 1));
 			set_line(res, conf, line);
 			conf->nb_line++;
-			max = check(line);
-			if(space == 1 && max > 1 && conf->nb_line > 9)
-				print_error("Map_failure\n");
+			get_max(line, space, conf);
 			space = 0;
 		}
-		else if(is_empty_line(line))
+		else if (ft_isemptyline(line))
 			space = 1;
 		free(line);
 	}
-	close(fd);
+	close(tab[1]);
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 13:31:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 18:52:23 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 14:23:37 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void		set_perp_wall_dist(t_window *w)
 				(1 - w->game.stepY) / 2) / w->game.rayDir.y;
 }
 
-void	jumpt_to_next_map(t_window *w)
+void			jumpt_to_next_map(t_window *w)
 {
 	calculate_step_and_side_distance(w);
 	while (w->game.hit == 0)

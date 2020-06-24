@@ -6,7 +6,7 @@
 #    By: haachtch </var/mail/haachtch>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/05 15:07:23 by haachtch       #+#    #+#                 #
-#    Updated: 2020/06/23 20:00:36 by haachtch      ########   odam.nl          #
+#    Updated: 2020/06/24 13:17:30 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,16 +29,15 @@ SRC =	$(SRC_D)/get_next_line.c\
 		$(SRC_D)/draw.c\
 		$(SRC_D)/events.c\
 		$(SRC_D)/flood_fill.c\
-		$(SRC_D)/ft_realloc.c\
 		$(SRC_D)/ft_copy_file.c\
 		$(SRC_D)/ft_get_resolution.c\
 		$(SRC_D)/ft_print_file.c\
 		$(SRC_D)/get_color.c\
 		$(SRC_D)/images.c\
-		$(SRC_D)/init.c\
-		$(SRC_D)/is_it_ok.c\
-		$(SRC_D)/is_it_ok2.c\
-		$(SRC_D)/is_it_ok3.c\
+		$(SRC_D)/init_game.c\
+		$(SRC_D)/parse_textures.c\
+		$(SRC_D)/set_position.c\
+		$(SRC_D)/is_map_valid.c\
 		$(SRC_D)/main.c\
 		$(SRC_D)/movements.c\
 		$(SRC_D)/new_parser.c\

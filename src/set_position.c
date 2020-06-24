@@ -6,28 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:20:17 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 20:04:33 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:46:09 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-int		is_map_line_ok(char *line)
-{
-	int		i;
-
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] != '0' && line[i] != '1' && line[i] != '2' && line[i] != 'N'
-				&& line[i] != 'S' && line[i] != 'E' && line[i] != 'W')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int		is_position_in_line(char *line)
+int			is_position_in_line(char *line)
 {
 	int		i;
 
@@ -42,17 +27,24 @@ int		is_position_in_line(char *line)
 	return (0);
 }
 
-int		is_line_valid(char *line)
+void		set_position(t_config *conf, char *line, int y)
 {
 	int		i;
 
 	i = 0;
+	if (conf->direction != 'Z')
+		print_error("Error\n!!! Direction Already Set !!!\n");
+	conf->posY = y;
 	while (line[i])
 	{
-		if (line[i] != '0' && line[i] != '1'
-				&& line[i] != '2' && line[i] != ' ')
-			return (0);
+		if (line[i] == 'N' || line[i] == 'S'
+				|| line[i] == 'E' || line[i] == 'W')
+		{
+			conf->posX = i;
+			conf->direction = line[i];
+			line[i] = '0';
+			break ;
+		}
 		i++;
 	}
-	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: haachtch <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:04:23 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 18:15:02 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 18:11:04 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,5 @@ int		ft_atoi_at_index(const char *str, int i)
 	}
 	if (nb >= 9223372036854775807 && neg == -1)
 		return (0);
-	if (nb >= 9223372036854775807 && neg == 1)
-		return (-1);
 	return (nb * neg);
 }

@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 13:26:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 22:00:23 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:19:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,8 @@ typedef struct      s_window {
 	t_texture		*textures;
 	t_sprite		sprite;
 }                   t_window;
-
+void		init_sprite(t_window *w, int index);
+void	get_sprites_back(t_config *conf);
 void	order_sprites(t_window *w);
 void	*ft_calloc(size_t count, size_t size);
 void	swap(t_vec2 *a, t_vec2 *b);
@@ -173,35 +174,27 @@ void jumpt_to_next_map(t_window *w);
 t_config        new_config(void);
 void            get_config(char **file, t_config *conf);
 int             flood_fill(char **str, int x, int y, int nb_line);
-void    set_line(char **file, t_config *conf, char *line);
-char    **cpy_cube_file(char *argv, t_config *conf);
-int             get_width(char *line);
-int             get_height(char *line);
+char    **cpy_cube_file(char *argv, t_config *conf, int space);
 void    set_resolution(t_config *conf, char *str);
 int             is_resolution_line_ok(char *line);
 void    print(char **file, int nb_line);
-void    *ft_realloc(void *s, size_t n);
 int             get_red(char *str);
 int             get_green(char *str);
 int             get_blue(char *str);
 void    set_color(t_config *conf, char *str);
 int             is_color_ok(char *line);
 int             is_empty_line(char *line);
-int             is_path_ok(char *str);
 int             is_texture_ok(char *line, t_config *conf);
 int             is_line_valid(char *line);
-int             is_map_line_ok(char *line);
 int             is_position_in_line(char *line);
 int             is_line_valid(char *line);
-int             are_bounderies_ok(char *line);
 int             is_map_valid(t_config *conf);
 int             is_column_ok(t_config *conf);
 void            print_error(char *s);
 void            set_texture(t_config *conf, char *str);
 void            set_position(t_config *conf, char *line, int y);
 void            set_map(t_config *conf, char *str);
-t_config        parse_map(char *argv);
-int             is_sprite_in_line(char *line);
+t_config        new_parser(char *argv);
 void    get_sprites(t_config *conf);
 char    get_line_id(char *line);
 int             get_last_map_value(char *line);

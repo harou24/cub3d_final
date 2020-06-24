@@ -6,7 +6,7 @@
 #    By: ybakker <ybakker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/01 10:51:58 by ybakker           #+#    #+#              #
-#    Updated: 2020/06/21 19:16:54 by haachtch      ########   odam.nl          #
+#    Updated: 2020/06/24 13:13:07 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC		=	ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_putnbr_fd\
 	ft_split ft_strchr ft_strdup ft_strjoin ft_strmapi ft_strtrim\
 	ft_substr ft_memcmp ft_strncmp ft_atoi ft_isalpha ft_isalnum\
 	ft_isascii ft_isprint ft_toupper ft_tolower ft_isdigit\
-	ft_atoi_at_index ft_iswhitespace ft_strdup2
+	ft_atoi_at_index ft_iswhitespace ft_strdup2 ft_isuppercase\
+	ft_isemptyline ft_realloc
 CFILES	=	$(SRC:%=%.c)
 OFILES	=	$(SRC:%=%.o)
 FLAGS	=	-Wall -Wextra -Werror

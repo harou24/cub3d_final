@@ -6,45 +6,48 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:05:34 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 20:02:41 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:55:27 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-void		load_texture(t_window *w, t_texture *t)
+void		check_path(char *path)
 {
 	int		fd;
 	int		res;
 	char	buffer[1];
 
-	fd = open(t->path, O_RDONLY);
+	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		print_error("File does not exist !\n");
+		print_error("Error\nFile does not exist !\n");
 	res = read(fd, buffer, 1);
 	if (res == -1)
-		print_error("Invalide file for texture !\n");
-	char *s = ft_strrchr(t->path, '.');
+		print_error("Error\nInvalide file for texture !\n");
+}
+
+void		load_texture(t_window *w, t_texture *t)
+{
+	char	*s;
+
+	check_path(t->path);
+	s = ft_strrchr(t->path, '.');
 	if (ft_strncmp(s, ".png", 4) == 0)
 	{
-	t->tex.data.img = mlx_png_file_to_image(w->mlx, t->path,
+		t->tex.data.img = mlx_png_file_to_image(w->mlx, t->path,
 				&t->tex.width, &t->tex.height);
-	t->tex.data.addr = mlx_get_data_addr(t->tex.data.img,
-			&t->tex.data.bits_per_pixel, &t->tex.data.line_length,
-				&t->tex.data.endian);
 	}
-	else if(ft_strncmp(s, ".xpm", 4) == 0)
+	else if (ft_strncmp(s, ".xpm", 4) == 0)
 	{
-	t->tex.data.img = mlx_xpm_file_to_image(w->mlx, t->path,
+		t->tex.data.img = mlx_xpm_file_to_image(w->mlx, t->path,
 				&t->tex.width, &t->tex.height);
+	}
+	else
+		print_error("Error\nTextures loading error\n");
 	t->tex.data.addr = mlx_get_data_addr(t->tex.data.img,
 			&t->tex.data.bits_per_pixel, &t->tex.data.line_length,
-				&t->tex.data.endian);
-	}
-
-	else
-		print_error("Textures error3\n");
-
+			&t->tex.data.endian);
+	ft_putstr_fd("\n\nO----------------Loading---------------->   ", 1);
 	ft_putstr_fd(t->path, 1);
 	ft_putchar_fd('\n', 1);
 }

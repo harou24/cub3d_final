@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:40:02 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 18:52:13 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:31:41 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	confirm(int tab[])
 	int		i;
 
 	i = 0;
-	while(i < 3)
+	while (i < 3)
 	{
-		if(tab[i] < 0 || tab[i] > 255)
+		if (tab[i] < 0 || tab[i] > 255)
 			print_error("COLOR ERROR\n");
 		i++;
 	}

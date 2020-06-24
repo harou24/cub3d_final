@@ -6,7 +6,7 @@
 /*   By: haachtch <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/06 15:26:05 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/21 19:21:44 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 13:12:45 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 int		ft_iswhitespace(int c);
 char	*ft_strdup2(const char *s, int max);
+int		ft_isuppercse(char c);
+int		ft_isemptyline(char *c);
+void	*ft_realloc(void *s, size_t n);
 
 #endif

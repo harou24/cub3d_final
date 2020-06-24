@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 19:33:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/21 20:59:51 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:58:47 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static t_bmp		new_bmp(t_window *w)
 	return (bmp);
 }
 
-ssize_t		write_data(int fd, t_window *w)
+ssize_t				write_data(int fd, t_window *w)
 {
 	t_bmp	bmp;
 

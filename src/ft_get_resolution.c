@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:17:36 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 18:22:26 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 17:57:44 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-int		get_width(char *line)
+static int		get_width(char *line)
 {
 	int		i;
 
@@ -24,7 +24,7 @@ int		get_width(char *line)
 	return (-1);
 }
 
-int		get_height(char *line)
+static int		get_height(char *line)
 {
 	int		i;
 
@@ -38,12 +38,12 @@ int		get_height(char *line)
 	return (-1);
 }
 
-void	set_resolution(t_config *conf, char *str)
+void			set_resolution(t_config *conf, char *str)
 {
 	int		width;
 	int		height;
 
-	if(conf->height != -1 && conf->width != -1)
+	if (conf->height != -1 && conf->width != -1)
 		print_error("Error\nToo many Resolution !\n");
 	if (!is_resolution_line_ok(str))
 		print_error("Error\nResolution Error !\n");
@@ -57,7 +57,7 @@ void	set_resolution(t_config *conf, char *str)
 		print_error("Error\nResolution Error : Invalid Resolution value\n");
 }
 
-int		is_resolution_line_ok(char *line)
+int				is_resolution_line_ok(char *line)
 {
 	int		i;
 	int		nb_number;
