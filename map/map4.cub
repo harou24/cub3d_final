@@ -2,7 +2,7 @@ R 1920 1080
 NO  ./textures/t4.png
 SO ./textures/t0.png
 WE ./textures/t1.png
-EA ./textures/t4.png
+EA ./textures/obama.png
 S   ./textures/s0.png
 C 79,210, 255
 F 37,37, 45

@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/09 17:58:01 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:44:32 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 20:22:53 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		main(int argc, char **argv)
 	game(&w);
 	if (argc == 3)
 		ft_take_screenshot(&w, argv[2]);
+	mlx_hook(w.win, 17, 0, (int (*)())&exit, 0);
 	mlx_hook(w.win, 2, 1L << 0, key_pressed, &w);
 	mlx_hook(w.win, 3, 1L << 1, key_release, &w);
 	mlx_loop_hook(w.mlx, update, &w);

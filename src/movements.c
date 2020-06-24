@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 15:03:58 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/22 12:05:13 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 21:21:13 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	move_camera(t_window *w, double old_dir_x, double old_plane_x)
 {
 	old_dir_x = w->game.p.dir.x;
 	old_plane_x = w->game.plane.x;
-	if (w->k.key_state[5] == 1)
+	if (w->k.key_state[6] == 1)
 	{
 		w->game.p.dir.x = w->game.p.dir.x * cos(-ROTATION_SPEED) -
 			w->game.p.dir.y * sin(-ROTATION_SPEED);

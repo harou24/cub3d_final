@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:05:34 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:55:27 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 21:36:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void		load_texture(t_window *w, t_texture *t)
 	}
 	else
 		print_error("Error\nTextures loading error\n");
+	if (t->tex.data.img == NULL)
+		print_error("Error\n");
 	t->tex.data.addr = mlx_get_data_addr(t->tex.data.img,
 			&t->tex.data.bits_per_pixel, &t->tex.data.line_length,
 			&t->tex.data.endian);

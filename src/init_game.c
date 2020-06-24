@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:20:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 19:09:29 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/24 21:16:23 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void	init_player_pos(t_window *w)
 	else if (w->conf.direction == 'S')
 	{
 		w->game.p.dir = new_vec2(0.0, 1.0);
-		w->game.plane = new_vec2(-0.66, 0.0);
+		w->game.plane = new_vec2(0.66, 0.0);
 	}
 	else if (w->conf.direction == 'N')
 	{
 		w->game.p.dir = new_vec2(0.0, -1.0);
-		w->game.plane = new_vec2(0.66, 0.0);
+		w->game.plane = new_vec2(-0.66, 0.0);
 	}
 }
