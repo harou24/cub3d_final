@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 12:29:21 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 20:05:12 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:15:42 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,32 @@ void	magic_free(char **file, int nb_line)
 		i++;
 	}
 	free(file);
+}
+
+int		is_color_ok(char *line)
+{
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (line[i])
+	{
+		if (line[i] == ',')
+			count++;
+		i++;
+	}
+	if (count != 2)
+		return (0);
+	i = ft_strlen(line);
+	count = 0;
+	while (i > 0)
+	{
+		if (ft_isdigit(line[i]) && (line[i - 1] == ' ' || line[i - 1] == ','))
+			count++;
+		i--;
+	}
+	if (count == 3)
+		return (1);
+	return (0);
 }

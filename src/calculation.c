@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 13:31:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 20:25:13 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:59:22 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,40 @@
 
 static void		calculate_step_and_side_distance(t_window *w)
 {
-	if (w->game.rayDir.x < 0)
+	if (w->game.ray_dir.x < 0)
 	{
-		w->game.stepX = -1;
-		w->game.sideDist.x = (w->game.p.pos.x - w->game.mapX)
-			* w->game.deltaDist.x;
+		w->game.step_x = -1;
+		w->game.side_dist.x = (w->game.p.pos.x - w->game.map_x)
+			* w->game.delta_dist.x;
 	}
 	else
 	{
-		w->game.stepX = 1;
-		w->game.sideDist.x = (w->game.mapX + 1.0 - w->game.p.pos.x)
-			* w->game.deltaDist.x;
+		w->game.step_x = 1;
+		w->game.side_dist.x = (w->game.map_x + 1.0 - w->game.p.pos.x)
+			* w->game.delta_dist.x;
 	}
-	if (w->game.rayDir.y < 0)
+	if (w->game.ray_dir.y < 0)
 	{
-		w->game.stepY = -1;
-		w->game.sideDist.y = (w->game.p.pos.y - w->game.mapY)
-			* w->game.deltaDist.y;
+		w->game.step_y = -1;
+		w->game.side_dist.y = (w->game.p.pos.y - w->game.map_y)
+			* w->game.delta_dist.y;
 	}
 	else
 	{
-		w->game.stepY = 1;
-		w->game.sideDist.y = (w->game.mapY + 1.0 - w->game.p.pos.y)
-			* w->game.deltaDist.y;
+		w->game.step_y = 1;
+		w->game.side_dist.y = (w->game.map_y + 1.0 - w->game.p.pos.y)
+			* w->game.delta_dist.y;
 	}
 }
 
 static void		set_perp_wall_dist(t_window *w)
 {
 	if (w->game.side == 0)
-		w->game.perpWallDist = (w->game.mapX - w->game.p.pos.x +
-				(1 - w->game.stepX) / 2) / w->game.rayDir.x;
+		w->game.perp_wall_dist = (w->game.map_x - w->game.p.pos.x +
+				(1 - w->game.step_x) / 2) / w->game.ray_dir.x;
 	else
-		w->game.perpWallDist = (w->game.mapY - w->game.p.pos.y +
-				(1 - w->game.stepY) / 2) / w->game.rayDir.y;
+		w->game.perp_wall_dist = (w->game.map_y - w->game.p.pos.y +
+				(1 - w->game.step_y) / 2) / w->game.ray_dir.y;
 }
 
 void			jumpt_to_next_map(t_window *w)
@@ -55,21 +55,21 @@ void			jumpt_to_next_map(t_window *w)
 	calculate_step_and_side_distance(w);
 	while (w->game.hit == 0)
 	{
-		if (w->game.sideDist.x < w->game.sideDist.y)
+		if (w->game.side_dist.x < w->game.side_dist.y)
 		{
-			w->game.sideDist.x = w->game.sideDist.x + w->game.deltaDist.x;
-			if (w->game.mapX + w->game.stepX >= 0)
-				w->game.mapX = w->game.mapX + w->game.stepX;
+			w->game.side_dist.x = w->game.side_dist.x + w->game.delta_dist.x;
+			if (w->game.map_x + w->game.step_x >= 0)
+				w->game.map_x = w->game.map_x + w->game.step_x;
 			w->game.side = 0;
 		}
 		else
 		{
-			w->game.sideDist.y = w->game.sideDist.y + w->game.deltaDist.y;
-			if (w->game.mapY + w->game.stepY >= 0)
-				w->game.mapY = w->game.mapY + w->game.stepY;
+			w->game.side_dist.y = w->game.side_dist.y + w->game.delta_dist.y;
+			if (w->game.map_y + w->game.step_y >= 0)
+				w->game.map_y = w->game.map_y + w->game.step_y;
 			w->game.side = 1;
 		}
-		if (w->conf.map[w->game.mapY][w->game.mapX] == '1')
+		if (w->conf.map[w->game.map_y][w->game.map_x] == '1')
 			w->game.hit = 1;
 	}
 	set_perp_wall_dist(w);

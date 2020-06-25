@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:20:17 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:46:09 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:32:08 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ void		set_position(t_config *conf, char *line, int y)
 	i = 0;
 	if (conf->direction != 'Z')
 		print_error("Error\n!!! Direction Already Set !!!\n");
-	conf->posY = y;
+	conf->pos_y = y;
 	while (line[i])
 	{
 		if (line[i] == 'N' || line[i] == 'S'
 				|| line[i] == 'E' || line[i] == 'W')
 		{
-			conf->posX = i;
+			conf->pos_x = i;
 			conf->direction = line[i];
 			line[i] = '0';
 			break ;

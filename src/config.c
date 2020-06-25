@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 13:45:59 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 13:53:22 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:27:52 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_config	new_config(void)
 	conf.nb_line = 0;
 	conf.nb_sprite = 0;
 	conf.sprites_pos = malloc(sizeof(t_vec2) * 200);
-	conf.posX = 0;
-	conf.posY = 0;
+	conf.pos_x = 0;
+	conf.pos_y = 0;
 	conf.direction = 'Z';
 	conf.textures = malloc(sizeof(char **) * 5);
 	if (conf.textures == NULL || conf.sprites_pos == NULL)

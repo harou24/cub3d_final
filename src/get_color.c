@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:40:02 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:31:41 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 12:19:55 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-int		get_red(char *str)
+static int		get_red(char *str)
 {
 	int		i;
 
@@ -24,7 +24,7 @@ int		get_red(char *str)
 	return (-1);
 }
 
-int		get_green(char *str)
+static int		get_green(char *str)
 {
 	int		i;
 
@@ -36,7 +36,7 @@ int		get_green(char *str)
 	return (ft_atoi_at_index(str, i));
 }
 
-int		get_blue(char *str)
+static int		get_blue(char *str)
 {
 	int		i;
 
@@ -48,7 +48,7 @@ int		get_blue(char *str)
 	return (ft_atoi_at_index(str, i + 1));
 }
 
-void	confirm(int tab[])
+static void		confirm(int tab[])
 {
 	int		i;
 
@@ -86,32 +86,4 @@ void	set_color(t_config *conf, char *str)
 		conf->rgb_floor[2] = get_blue(str);
 		confirm(conf->rgb_floor);
 	}
-}
-
-int		is_color_ok(char *line)
-{
-	int		i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	while (line[i])
-	{
-		if (line[i] == ',')
-			count++;
-		i++;
-	}
-	if (count != 2)
-		return (0);
-	i = ft_strlen(line);
-	count = 0;
-	while (i > 0)
-	{
-		if (ft_isdigit(line[i]) && (line[i - 1] == ' ' || line[i - 1] == ','))
-			count++;
-		i--;
-	}
-	if (count == 3)
-		return (1);
-	return (0);
 }

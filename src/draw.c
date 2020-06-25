@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 16:13:16 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 21:41:20 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 12:00:01 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 static void		draw(t_window *w, int draw_start, int draw_end, int x)
 {
-	int		y;
-	int		color_floor;
-	int		color_ceiling;
+	int				y;
+	int				color_floor;
+	int				color_ceiling;
+	unsigned int	color;
 
 	y = draw_start;
 	while (y < draw_end)
 	{
-		my_mlx_pixel_put(w->non_active, x, y, get_color(w));
+		color = get_color(w);
+		color &= ~(0xFF000000);
+		my_mlx_pixel_put(w->non_active, x, y, color);
 		y++;
 	}
 	y = draw_end;
@@ -47,12 +50,13 @@ static void		put_sprite_color(t_window *w)
 	y = w->sprite.draw_start_y;
 	while (y < w->sprite.draw_end_y)
 	{
-		w->sprite.d = (y - w->sprite.vMoveScreen)
-			* 256 - w->conf.height * 128 + w->sprite.spriteHeight * 128;
+		w->sprite.d = (y - w->sprite.v_move_screen)
+			* 256 - w->conf.height * 128 + w->sprite.sprite_height * 128;
 		w->sprite.y = ((w->sprite.d * w->textures[4].tex.height)
-				/ w->sprite.spriteHeight) / 256;
+				/ w->sprite.sprite_height) / 256;
 		color = my_mlx_pixel_read(&w->textures[4].tex.data,
 				w->sprite.x, w->sprite.y);
+		color &= ~(0xFF000000);
 		if ((color & 0x00FFFFFF) != 0)
 			my_mlx_pixel_put(w->non_active, w->sprite.stripe, y, color);
 		y++;
@@ -72,7 +76,7 @@ static void		draw_sprites(t_window *w, double z_buffer[])
 		{
 			w->sprite.x =
 				(int)((256 * (w->sprite.stripe - (-w->sprite.width / 2 +
-									w->sprite.spriteScreenX)) *
+									w->sprite.sprite_screen_x)) *
 							w->textures[4].tex.width / w->sprite.width) / 256);
 			if (w->sprite.transform.y > 0 &&
 					w->sprite.stripe > 0 &&
@@ -97,18 +101,18 @@ void			game(t_window *w)
 	{
 		init_game(w, x);
 		jumpt_to_next_map(w);
-		w->game.line_height = (int)((w->conf.height / w->game.perpWallDist));
+		w->game.line_height = (int)((w->conf.height / w->game.perp_wall_dist));
 		w->game.wall_hit = 0;
 		if (w->game.side == 0)
-			w->game.wall_hit = w->game.p.pos.y + w->game.perpWallDist
-				* w->game.rayDir.y;
+			w->game.wall_hit = w->game.p.pos.y + w->game.perp_wall_dist
+				* w->game.ray_dir.y;
 		else
-			w->game.wall_hit = w->game.p.pos.x + w->game.perpWallDist
-				* w->game.rayDir.x;
+			w->game.wall_hit = w->game.p.pos.x + w->game.perp_wall_dist
+				* w->game.ray_dir.x;
 		w->game.wall_hit -= floor(w->game.wall_hit);
 		init_each_of_textures_values(w, get_start(w));
 		draw(w, get_start(w), get_end(w), x);
-		z_buffer[x] = w->game.perpWallDist;
+		z_buffer[x] = w->game.perp_wall_dist;
 		x++;
 	}
 	draw_sprites(w, z_buffer);

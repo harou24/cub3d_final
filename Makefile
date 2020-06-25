@@ -6,7 +6,7 @@
 #    By: haachtch </var/mail/haachtch>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/05 15:07:23 by haachtch       #+#    #+#                 #
-#    Updated: 2020/06/24 21:30:56 by haachtch      ########   odam.nl          #
+#    Updated: 2020/06/25 13:06:22 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,8 @@ SRC =	$(SRC_D)/get_next_line.c\
 		$(SRC_D)/save.c\
 		$(SRC_D)/sprite.c\
 		$(SRC_D)/textures.c\
-		$(SRC_D)/utils.c\
-		$(SRC_D)/utils2.c\
+		$(SRC_D)/parser_utils.c\
+		$(SRC_D)/raycaster_utils.c\
 		$(SRC_D)/vec2.c\
 		$(SRC_D)/sprites_utils.c
 

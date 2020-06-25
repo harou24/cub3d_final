@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 12:24:40 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 20:56:03 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:34:07 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ unsigned int	get_color_if_side(t_window *w)
 {
 	unsigned int	color;
 
-	if (w->game.rayDir.y < 0)
+	if (w->game.ray_dir.y < 0)
 	{
 		w->textures[0].y = (int)w->textures[0].pos;
 		w->textures[0].pos += w->textures[0].step;
@@ -61,7 +61,7 @@ unsigned int	get_color(t_window *w)
 		color = get_color_if_side(w);
 	else
 	{
-		if (w->game.rayDir.x < 0)
+		if (w->game.ray_dir.x < 0)
 		{
 			w->textures[2].y = (int)w->textures[2].pos;
 			w->textures[2].pos += w->textures[2].step;

@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/20 13:40:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 14:23:29 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 12:09:10 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-void	swap(t_vec2 *a, t_vec2 *b)
+static void		swap(t_vec2 *a, t_vec2 *b)
 {
 	t_vec2	tmp;
 
@@ -21,7 +21,7 @@ void	swap(t_vec2 *a, t_vec2 *b)
 	*b = tmp;
 }
 
-void	buble_sort(t_vec2 *tab, int size)
+static void		buble_sort(t_vec2 *tab, int size)
 {
 	int		i;
 	int		j;
@@ -40,7 +40,7 @@ void	buble_sort(t_vec2 *tab, int size)
 	}
 }
 
-void	order_sprites(t_window *w)
+void			order_sprites(t_window *w)
 {
 	int i;
 

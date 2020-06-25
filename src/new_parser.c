@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/02 10:30:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:45:18 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 11:32:33 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_config	new_parser(char *argv)
 	if (conf.nb_line < 9)
 		print_error("Error\n!!!----------No map----------!!!\n");
 	get_sprites(&conf);
-	flood_fill(conf.map, conf.posY, conf.posX, conf.nb_line - 8);
+	flood_fill(conf.map, conf.pos_y, conf.pos_x, conf.nb_line - 8);
 	if (!is_map_valid(&conf))
 		print_error("Error\n!!!----------Invalid map----------!!!\n");
 	get_sprites_back(&conf);

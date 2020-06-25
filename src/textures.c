@@ -6,13 +6,13 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:05:34 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 21:36:26 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 12:12:53 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cube3d.h"
 
-void		check_path(char *path)
+void			check_path(char *path)
 {
 	int		fd;
 	int		res;
@@ -26,7 +26,7 @@ void		check_path(char *path)
 		print_error("Error\nInvalide file for texture !\n");
 }
 
-void		load_texture(t_window *w, t_texture *t)
+static void		load_texture(t_window *w, t_texture *t)
 {
 	char	*s;
 
@@ -54,7 +54,7 @@ void		load_texture(t_window *w, t_texture *t)
 	ft_putchar_fd('\n', 1);
 }
 
-t_texture	*get_textures(t_window *w)
+t_texture		*get_textures(t_window *w)
 {
 	t_texture	*textures;
 	int			count;
@@ -71,7 +71,7 @@ t_texture	*get_textures(t_window *w)
 	return (textures);
 }
 
-void		init_each_of_textures_values(t_window *w, int draw_start)
+void			init_each_of_textures_values(t_window *w, int draw_start)
 {
 	int k;
 
@@ -83,12 +83,12 @@ void		init_each_of_textures_values(t_window *w, int draw_start)
 	}
 }
 
-void		init_texture(t_window *w, t_texture *t, int draw_start)
+void			init_texture(t_window *w, t_texture *t, int draw_start)
 {
 	t->x = w->game.wall_hit * (double)t->tex.width;
-	if (w->game.side == 0 && w->game.rayDir.x > 0)
+	if (w->game.side == 0 && w->game.ray_dir.x > 0)
 		t->x = t->tex.width - t->x - 1;
-	if (w->game.side == 1 && w->game.rayDir.y < 0)
+	if (w->game.side == 1 && w->game.ray_dir.y < 0)
 		t->x = t->tex.width - t->x - 1;
 	t->step = 1.0 * t->tex.height / w->game.line_height;
 	t->pos = (draw_start - w->conf.height / 2 + w->game.line_height / 2)

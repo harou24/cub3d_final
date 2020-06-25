@@ -6,7 +6,7 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:03:07 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:54:22 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 13:41:12 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ static void		init_sprite2(t_window *w)
 {
 	if (w->sprite.draw_start_y < 0)
 		w->sprite.draw_start_y = 0;
-	w->sprite.draw_end_y = w->sprite.spriteHeight / 2
-		+ w->conf.height / 2 + w->sprite.vMoveScreen;
+	w->sprite.draw_end_y = w->sprite.sprite_height / 2
+		+ w->conf.height / 2 + w->sprite.v_move_screen;
 	if (w->sprite.draw_end_y >= w->conf.height)
 		w->sprite.draw_end_y = w->conf.height - 1;
 	w->sprite.width = abs((int)(w->conf.height
-				/ (w->sprite.transform.y))) / uDiv;
-	w->sprite.draw_start_x = -w->sprite.width / 2 + w->sprite.spriteScreenX;
+				/ (w->sprite.transform.y))) / U_DIV;
+	w->sprite.draw_start_x = -w->sprite.width / 2 + w->sprite.sprite_screen_x;
 	if (w->sprite.draw_start_x < 0)
 		w->sprite.draw_start_x = 0;
-	w->sprite.draw_end_x = w->sprite.width / 2 + w->sprite.spriteScreenX;
+	w->sprite.draw_end_x = w->sprite.width / 2 + w->sprite.sprite_screen_x;
 	if (w->sprite.draw_end_x >= w->conf.width)
 		w->sprite.draw_end_x = w->conf.width - 1;
 	w->sprite.stripe = w->sprite.draw_start_x;
@@ -89,19 +89,19 @@ void			init_sprite(t_window *w, int index)
 {
 	w->sprite.pos.x = w->conf.sprites_pos[index].x - w->game.p.pos.x + 0.5;
 	w->sprite.pos.y = w->conf.sprites_pos[index].y - w->game.p.pos.y + 0.5;
-	w->sprite.invDet = 1.0 / (w->game.plane.x *
+	w->sprite.inv_det = 1.0 / (w->game.plane.x *
 			w->game.p.dir.y - w->game.p.dir.x * w->game.plane.y);
-	w->sprite.transform.x = w->sprite.invDet *
+	w->sprite.transform.x = w->sprite.inv_det *
 		(w->game.p.dir.y * w->sprite.pos.x - w->game.p.dir.x * w->sprite.pos.y);
-	w->sprite.transform.y = w->sprite.invDet *
+	w->sprite.transform.y = w->sprite.inv_det *
 		(-w->game.plane.y * w->sprite.pos.x +
 			w->game.plane.x * w->sprite.pos.y);
-	w->sprite.spriteScreenX = (int)((w->conf.width / 2) *
+	w->sprite.sprite_screen_x = (int)((w->conf.width / 2) *
 			(1 + w->sprite.transform.x / w->sprite.transform.y));
-	w->sprite.spriteHeight =
-		abs((int)(w->conf.height / (w->sprite.transform.y))) / vDiv;
-	w->sprite.vMoveScreen = (int)(vMove / w->sprite.transform.y);
-	w->sprite.draw_start_y = -w->sprite.spriteHeight / 2 +
-		w->conf.height / 2 + w->sprite.vMoveScreen;
+	w->sprite.sprite_height =
+		abs((int)(w->conf.height / (w->sprite.transform.y))) / V_DIV;
+	w->sprite.v_move_screen = (int)(V_MOVE / w->sprite.transform.y);
+	w->sprite.draw_start_y = -w->sprite.sprite_height / 2 +
+		w->conf.height / 2 + w->sprite.v_move_screen;
 	init_sprite2(w);
 }
