@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 15:03:58 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 12:49:27 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 15:03:56 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 void	move_camera(t_window *w, double old_dir_x, double old_plane_x)
 {

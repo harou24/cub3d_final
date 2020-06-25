@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/09 17:58:01 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 12:50:29 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:57:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 #include "../inc/bmp.h"
 
 int		is_cube_file(char *str)

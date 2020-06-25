@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:05:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/20 19:15:14 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:54:53 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 void	print(char **file, int nb_line)
 {

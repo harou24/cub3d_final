@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 16:13:16 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 12:00:01 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:53:23 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 #include "../inc/bmp.h"
 
 static void		draw(t_window *w, int draw_start, int draw_end, int x)

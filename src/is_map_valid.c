@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:29:47 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:57:07 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:56:58 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 static int		are_bounderies_ok(char *line)
 {

@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/20 13:40:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 12:09:10 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 15:01:23 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 static void		swap(t_vec2 *a, t_vec2 *b)
 {

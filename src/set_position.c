@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:20:17 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 11:32:08 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 15:00:10 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 int			is_position_in_line(char *line)
 {

@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 13:45:59 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 11:27:52 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:53:03 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 t_config	new_config(void)
 {

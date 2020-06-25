@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:17:36 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 17:57:44 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:54:32 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 static int		get_width(char *line)
 {

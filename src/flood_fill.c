@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 12:17:18 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 14:30:32 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:53:55 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 int		flood_fill(char **str, int x, int y, int nb_line)
 {

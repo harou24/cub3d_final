@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 17:03:07 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 13:41:12 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 15:00:35 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 static int		is_sprite_in_line(char *line)
 {

@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:20:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 12:08:01 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 14:56:34 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3D.h"
 
 void			init_game(t_window *w, int current_width)
 {
