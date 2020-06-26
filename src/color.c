@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 15:00:37 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:52:49 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:35:16 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 void			my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

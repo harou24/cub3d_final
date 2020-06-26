@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/09 17:58:01 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:57:26 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:48:27 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 #include "../inc/bmp.h"
 
 int		is_cube_file(char *str)
@@ -46,6 +46,16 @@ void	ft_take_screenshot(t_window *w, char *argv)
 	exit(1);
 }
 
+void	check_resolution(t_window *w)
+{
+	int		height;
+	int		width;
+
+	mlx_get_screen_size(w->mlx, &width, &height);
+	if (w->conf.width > width || w->conf.height > height)
+		mlx_get_screen_size(w->mlx, &w->conf.width, &w->conf.height);
+}
+
 int		main(int argc, char **argv)
 {
 	t_window	w;
@@ -56,10 +66,9 @@ int		main(int argc, char **argv)
 		print_error("Error :  !!!   Not \".cub\"   !!!\n");
 	w.conf = new_parser(argv[1]);
 	w.k = init_key();
+	check_resolution(&w);
 	init_player_pos(&w);
 	w.mlx = mlx_init();
-	if ((w.conf.width > 2560 || w.conf.height > 1440) && argc != 3)
-		mlx_get_screen_size(w.mlx, &w.conf.width, &w.conf.height);
 	w.win = mlx_new_window(w.mlx, w.conf.width, w.conf.height, "CUBE3D");
 	w.array = make_more_images(&w);
 	w.textures = get_textures(&w);

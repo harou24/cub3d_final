@@ -6,7 +6,7 @@
 #    By: haachtch </var/mail/haachtch>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/03/05 15:07:23 by haachtch       #+#    #+#                 #
-#    Updated: 2020/06/25 15:02:31 by haachtch      ########   odam.nl          #
+#    Updated: 2020/06/26 10:59:56 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ SRC =	$(SRC_D)/get_next_line.c\
 		$(SRC_D)/sprites_utils.c
 
 
-INC = $(INC_D)/cub3D.h\
+INC = $(INC_D)/cub3d.h\
 	  $(INC_D)/bmp.h\
 	  ./libft/libft.h
 
@@ -73,7 +73,7 @@ $(OBJ_D):
 $(OBJ): $(OBJ_D)/%.o: $(SRC_D)/%.c
 	@$(CC) $(CC_FLAGS) -I$(INC_D) -I./libft -c $< -o $@
 
-$(MINILIBX) : 
+$(MINILIBX) :
 	$(MAKE) -C $(MINILIBX_D)
 	@ln -s $(MINILIBX_D)/$(MINILIBX) ./
 

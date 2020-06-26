@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:40:02 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:55:11 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:36:55 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 static int		get_red(char *str)
 {
@@ -61,7 +61,7 @@ static void		confirm(int tab[])
 	}
 }
 
-void	set_color(t_config *conf, char *str)
+void			set_color(t_config *conf, char *str)
 {
 	int		i;
 

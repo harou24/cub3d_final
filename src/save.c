@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 19:33:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:59:54 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:39:27 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 #include "../inc/bmp.h"
 
 static t_header		new_header(t_window *w, t_bmp bmp)

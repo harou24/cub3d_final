@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 14:20:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:56:34 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/26 10:55:13 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 void			init_game(t_window *w, int current_width)
 {
@@ -42,7 +42,17 @@ void			init_player_pos(t_window *w)
 	if (w->conf.direction == 'Z')
 		print_error("Error\nNo direction set !\n");
 	w->game.p.pos = new_vec2(w->conf.pos_x + 0.5, w->conf.pos_y + 0.5);
-	if (w->conf.direction == 'E')
+	if (w->conf.direction == 'S')
+	{
+		w->game.p.dir = new_vec2(0.0, 1.0);
+		w->game.plane = new_vec2(-0.66, 0.0);
+	}
+	else if (w->conf.direction == 'N')
+	{
+		w->game.p.dir = new_vec2(0.0, -1.0);
+		w->game.plane = new_vec2(0.66, 0.0);
+	}
+	else if (w->conf.direction == 'E')
 	{
 		w->game.p.dir = new_vec2(1.0, 0.0);
 		w->game.plane = new_vec2(0.0, 0.66);
@@ -51,15 +61,5 @@ void			init_player_pos(t_window *w)
 	{
 		w->game.p.dir = new_vec2(-1.0, 0.0);
 		w->game.plane = new_vec2(0.0, -0.66);
-	}
-	else if (w->conf.direction == 'S')
-	{
-		w->game.p.dir = new_vec2(0.0, 1.0);
-		w->game.plane = new_vec2(0.66, 0.0);
-	}
-	else if (w->conf.direction == 'N')
-	{
-		w->game.p.dir = new_vec2(0.0, -1.0);
-		w->game.plane = new_vec2(-0.66, 0.0);
 	}
 }

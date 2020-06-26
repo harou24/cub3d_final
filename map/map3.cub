@@ -1,18 +1,13 @@
-R 6300 6400
-NO ./textures/t0.png
-SO ./textures/t1.png
-WE ./textures/t2.png
-EA ./textures/t4.png
-S   ./textures/pok2.png
-F 255,210,   20
-C 255,210    ,20
+R  		       2900 2000
+NO      	    ./textures/t0.png
+S          	    ./textures/t1.png
+WE              ./textures/t3.png
+EA          	 ./textures/t4.png
+SO               	./textures/pok2.png
+F    255 ,         210,	   20
+C               255,210 		   ,20
 
-1111111
-1     1
-1     1
-1     1
-1     1
-
-1N    1
-1     1
-1111111
+11111111111111111
+1S000000000000001
+10111111111111111
+111

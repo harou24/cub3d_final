@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/10 13:28:29 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 15:01:58 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:40:32 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 t_vec2	new_vec2(double x, double y)
 {

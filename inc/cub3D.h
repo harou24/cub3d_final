@@ -6,12 +6,12 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/08 13:26:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:50:59 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:34:00 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB_3D_H
-# define CUB_3D_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # include "../libx/mlx.h"
 # include "../libft/libft.h"

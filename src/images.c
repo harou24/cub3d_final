@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/14 13:57:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:56:00 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:37:31 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 t_data		*make_more_images(t_window *w)
 {

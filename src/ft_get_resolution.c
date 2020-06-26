@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:17:36 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:54:32 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:36:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 static int		get_width(char *line)
 {
@@ -64,6 +64,10 @@ int				is_resolution_line_ok(char *line)
 
 	i = ft_strlen(line);
 	nb_number = 0;
+	if (line[0] != 'R')
+		print_error("Error\n::Wrond ID for Resolution::\n");
+	if (!ft_iswhitespace(line[1]))
+		print_error("Error\nResolution\n");
 	while (i > 0)
 	{
 		if (ft_isdigit(line[i]) && line[i - 1] == ' ')

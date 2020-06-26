@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/29 13:03:42 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:55:29 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:37:06 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 static void		clean_buffer(char *buffer)
 {

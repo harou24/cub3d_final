@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 13:45:59 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:53:03 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:35:28 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 t_config	new_config(void)
 {
@@ -56,7 +56,8 @@ void		get_config(char **file, t_config *conf)
 				|| get_line_id(file[i]) == 'E' || get_line_id(file[i]) == 'W'
 					|| get_line_id(file[i]) == 'P')
 			set_texture(conf, file[i]);
-		else if (get_line_id(file[i]) == 'C' || get_line_id(file[i]) == 'F')
+		else if ((get_line_id(file[i]) == 'C' || get_line_id(file[i]) == 'F')
+					&& ft_iswhitespace(file[i][1]))
 			set_color(conf, file[i]);
 		else
 			set_map(conf, file[i]);

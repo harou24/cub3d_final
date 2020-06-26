@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:09:23 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:59:17 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:38:47 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 static int		is_path_ok(char *str)
 {

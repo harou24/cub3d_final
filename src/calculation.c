@@ -6,11 +6,11 @@
 /*   By: haachtch </var/mail/haachtch>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 13:31:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 14:52:33 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/25 18:35:05 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3D.h"
+#include "../inc/cub3d.h"
 
 static void		calculate_step_and_side_distance(t_window *w)
 {
