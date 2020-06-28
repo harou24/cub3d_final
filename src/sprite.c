@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   sprite.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/12 17:03:07 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:39:45 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:16:56 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:17:00 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

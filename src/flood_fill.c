@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   flood_fill.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/14 12:17:18 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:36:03 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:10:43 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:10:49 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

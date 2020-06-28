@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main2.c                                            :+:    :+:            */
+/*   main.c                                             :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/09 17:58:01 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:48:27 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:05:38 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 22:02:35 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	ft_take_screenshot(t_window *w, char *argv)
 
 	if (ft_strncmp(argv, "--save", ft_strlen(argv)) != 0)
 		print_error("Error : !!!   ARG 3 is not ok !!!\n");
-	if (w->conf.width > 6000 || w->conf.height > 6000)
-		print_error("Error\nScreenshot error\nTry smaller resolution :)\n");
 	fd = open("screenshot.bmp", O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	write_data(fd, w);
 	close(fd);
@@ -66,7 +64,8 @@ int		main(int argc, char **argv)
 		print_error("Error :  !!!   Not \".cub\"   !!!\n");
 	w.conf = new_parser(argv[1]);
 	w.k = init_key();
-	check_resolution(&w);
+	if (argc == 2)
+		check_resolution(&w);
 	init_player_pos(&w);
 	w.mlx = mlx_init();
 	w.win = mlx_new_window(w.mlx, w.conf.width, w.conf.height, "CUBE3D");

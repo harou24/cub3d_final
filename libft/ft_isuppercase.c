@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_isuppercase.c                                   :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/24 11:46:31 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 11:47:57 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:19:35 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:19:39 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

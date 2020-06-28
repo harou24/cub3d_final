@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_print_file.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/12 16:05:48 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:36:37 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:11:50 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:11:53 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

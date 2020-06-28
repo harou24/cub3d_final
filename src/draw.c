@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   draw.c                                             :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/14 16:13:16 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:35:42 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:10:01 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:10:08 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

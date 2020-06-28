@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   get_next_line.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/29 13:03:42 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:37:06 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:12:43 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:12:46 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

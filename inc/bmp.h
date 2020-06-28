@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   bmp.h                                              :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/19 10:36:49 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:34:26 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:23:10 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:23:12 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

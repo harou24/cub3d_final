@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_iswhitespace.c                                  :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/21 17:25:40 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/21 17:26:35 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:19:55 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:19:58 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

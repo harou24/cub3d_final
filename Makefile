@@ -3,10 +3,10 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: haachtch </var/mail/haachtch>                +#+                      #
+#    By: haachtch <haachtch@student.codam.n>          +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/03/05 15:07:23 by haachtch       #+#    #+#                 #
-#    Updated: 2020/06/26 10:59:56 by haachtch      ########   odam.nl          #
+#    Created: 2020/06/28 20:22:26 by haachtch      #+#    #+#                  #
+#    Updated: 2020/06/28 21:43:09 by haachtch      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,8 @@ OBJ := $(SRC:$(SRC_D)/%.c=$(OBJ_D)/%.o)
 LIBFT = ./libft/libft.a
 CC = clang
 
-CC_FLAGS = -g -Wall -Werror -Wextra -Ofast -march=native
-#CC_FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+#CC_FLAGS = -g -Wall -Werror -Wextra -Ofast -march=native
+CC_FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 all: $(NAME)
 

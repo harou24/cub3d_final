@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strdup2.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/21 19:15:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/23 21:01:37 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:20:39 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:20:42 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

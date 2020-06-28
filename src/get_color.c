@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   get_color.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/12 16:40:02 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:36:55 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:12:16 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:12:21 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

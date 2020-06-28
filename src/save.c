@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   save.c                                             :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/16 19:33:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:39:27 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:18:28 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 21:33:38 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ ssize_t				write_data(int fd, t_window *w)
 		print_error("Error");
 		return (-1);
 	}
+	free(bmp.data);
 	return (1);
 }

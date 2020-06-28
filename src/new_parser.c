@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   new_parser.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/02 10:30:33 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:38:29 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:14:41 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:14:45 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

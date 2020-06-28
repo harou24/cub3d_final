@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   config.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/13 13:45:59 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:35:28 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:09:36 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:09:42 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   images.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/14 13:57:46 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:37:31 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:13:03 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:13:06 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

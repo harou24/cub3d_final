@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_get_resolution.c                                :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/12 16:17:36 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:36:26 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:11:30 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:11:34 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   vec2.c                                             :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/02/10 13:28:29 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/25 18:40:32 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:18:00 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:18:03 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_realloc.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: haachtch </var/mail/haachtch>                +#+                     */
+/*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/04 12:28:52 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/24 13:13:27 by haachtch      ########   odam.nl         */
+/*   Created: 2020/06/28 20:20:17 by haachtch      #+#    #+#                 */
+/*   Updated: 2020/06/28 20:20:20 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
