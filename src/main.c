@@ -6,7 +6,7 @@
 /*   By: haachtch <haachtch@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:05:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 22:02:35 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/28 22:08:34 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		main(int argc, char **argv)
 		check_resolution(&w);
 	init_player_pos(&w);
 	w.mlx = mlx_init();
-	w.win = mlx_new_window(w.mlx, w.conf.width, w.conf.height, "CUBE3D");
+	w.win = mlx_new_window(w.mlx, w.conf.width, w.conf.height, "Cub3D");
 	w.array = make_more_images(&w);
 	w.textures = get_textures(&w);
 	game(&w);
