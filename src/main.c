@@ -6,14 +6,14 @@
 /*   By: haachtch <haachtch@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:05:38 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 22:08:34 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/29 11:29:45 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 #include "../inc/bmp.h"
 
-int		is_cube_file(char *str)
+static int		is_cube_file(char *str)
 {
 	char	*s;
 	int		fd;
@@ -32,7 +32,7 @@ int		is_cube_file(char *str)
 	return (ft_strncmp(s, ".cub", 4));
 }
 
-void	ft_take_screenshot(t_window *w, char *argv)
+static void		ft_take_screenshot(t_window *w, char *argv)
 {
 	int		fd;
 
@@ -44,7 +44,7 @@ void	ft_take_screenshot(t_window *w, char *argv)
 	exit(1);
 }
 
-void	check_resolution(t_window *w)
+static void		check_resolution(t_window *w)
 {
 	int		height;
 	int		width;
@@ -54,7 +54,7 @@ void	check_resolution(t_window *w)
 		mlx_get_screen_size(w->mlx, &w->conf.width, &w->conf.height);
 }
 
-int		main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_window	w;
 

@@ -6,7 +6,7 @@
 /*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:11:30 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 20:11:34 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/29 11:37:08 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,7 @@ static int		get_height(char *line)
 	return (-1);
 }
 
-void			set_resolution(t_config *conf, char *str)
-{
-	int		width;
-	int		height;
-
-	if (conf->height != -1 && conf->width != -1)
-		print_error("Error\nToo many Resolution !\n");
-	if (!is_resolution_line_ok(str))
-		print_error("Error\nResolution Error !\n");
-	height = get_height(str);
-	width = get_width(str);
-	conf->width = width;
-	conf->height = height;
-	if (height < 1)
-		print_error("Error\nResolution Error : Invalid Resolution value\n");
-	if (width < 1)
-		print_error("Error\nResolution Error : Invalid Resolution value\n");
-}
-
-int				is_resolution_line_ok(char *line)
+static int		is_resolution_line_ok(char *line)
 {
 	int		i;
 	int		nb_number;
@@ -77,4 +58,23 @@ int				is_resolution_line_ok(char *line)
 	if (nb_number == 2)
 		return (1);
 	return (0);
+}
+
+void			set_resolution(t_config *conf, char *str)
+{
+	int		width;
+	int		height;
+
+	if (conf->height != -1 && conf->width != -1)
+		print_error("Error\nToo many Resolution !\n");
+	if (!is_resolution_line_ok(str))
+		print_error("Error\nResolution Error !\n");
+	height = get_height(str);
+	width = get_width(str);
+	conf->width = width;
+	conf->height = height;
+	if (height < 1)
+		print_error("Error\nResolution Error : Invalid Resolution value\n");
+	if (width < 1)
+		print_error("Error\nResolution Error : Invalid Resolution value\n");
 }

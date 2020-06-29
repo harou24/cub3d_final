@@ -6,7 +6,7 @@
 /*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:15:12 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 20:15:17 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/29 11:56:26 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		is_path_ok(char *str)
 	return (0);
 }
 
-int				is_texture_ok(char *line, t_config *conf)
+static int		is_texture_ok(char *line, t_config *conf)
 {
 	if (get_line_id(line) == 'N' && conf->textures[0] != NULL)
 		print_error("Error\nNorth Texture already set !\n");

@@ -6,7 +6,7 @@
 /*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:22:58 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 20:23:00 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/29 11:54:35 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,6 @@ void				init_game(t_window *w, int current_width);
 void				init_player_pos(t_window *w);
 void				swap_img(t_window *w);
 t_data				*make_more_images(t_window *w);
-void				init_texture(t_window *w, t_texture *t, int draw_start);
 t_texture			*get_textures(t_window *w);
 void				init_each_of_textures_values(t_window *w, int draw_start);
 void				game(t_window *w);
@@ -169,7 +168,6 @@ void				get_config(char **file, t_config *conf);
 int					flood_fill(char **str, int x, int y, int nb_line);
 char				**cpy_cube_file(char *argv, t_config *conf, int space);
 void				set_resolution(t_config *conf, char *str);
-int					is_resolution_line_ok(char *line);
 void				print(char **file, int nb_line);
 void				set_color(t_config *conf, char *str);
 int					is_color_ok(char *line);

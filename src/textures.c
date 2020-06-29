@@ -6,13 +6,13 @@
 /*   By: haachtch <haachtch@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/28 20:17:42 by haachtch      #+#    #+#                 */
-/*   Updated: 2020/06/28 20:17:46 by haachtch      ########   odam.nl         */
+/*   Updated: 2020/06/29 11:55:47 by haachtch      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-void			check_path(char *path)
+static void		check_path(char *path)
 {
 	int		fd;
 	int		res;
@@ -71,6 +71,18 @@ t_texture		*get_textures(t_window *w)
 	return (textures);
 }
 
+static void		init_texture(t_window *w, t_texture *t, int draw_start)
+{
+	t->x = w->game.wall_hit * (double)t->tex.width;
+	if (w->game.side == 0 && w->game.ray_dir.x > 0)
+		t->x = t->tex.width - t->x - 1;
+	if (w->game.side == 1 && w->game.ray_dir.y < 0)
+		t->x = t->tex.width - t->x - 1;
+	t->step = 1.0 * t->tex.height / w->game.line_height;
+	t->pos = (draw_start - w->conf.height / 2 + w->game.line_height / 2)
+		* t->step;
+}
+
 void			init_each_of_textures_values(t_window *w, int draw_start)
 {
 	int k;
@@ -81,16 +93,4 @@ void			init_each_of_textures_values(t_window *w, int draw_start)
 		init_texture(w, &w->textures[k], draw_start);
 		k++;
 	}
-}
-
-void			init_texture(t_window *w, t_texture *t, int draw_start)
-{
-	t->x = w->game.wall_hit * (double)t->tex.width;
-	if (w->game.side == 0 && w->game.ray_dir.x > 0)
-		t->x = t->tex.width - t->x - 1;
-	if (w->game.side == 1 && w->game.ray_dir.y < 0)
-		t->x = t->tex.width - t->x - 1;
-	t->step = 1.0 * t->tex.height / w->game.line_height;
-	t->pos = (draw_start - w->conf.height / 2 + w->game.line_height / 2)
-		* t->step;
 }
